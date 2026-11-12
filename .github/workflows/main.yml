@@ -10,11 +10,11 @@ on:
 
 jobs:
   build:
-    runs-on: windows-26.04
+    runs-on: windows-latest
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Compile C++
         run: g++ main.cpp -o anjing.exe -std=c++17
