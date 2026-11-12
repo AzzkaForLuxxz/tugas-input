@@ -14,13 +14,13 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Compile C++
-        run: g++ main.cpp -o anjing.exe -std=c++17
+        run: g++ main.cpp -o tugas.exe -std=c++17
 
       - name: Upload EXE
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v4
         with:
-          name: anjing-exe
-          path: anjing.exe
+          name: tugas-exe
+          path: tugas.exe
