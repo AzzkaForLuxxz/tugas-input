@@ -1,0 +1,26 @@
+
+name: Compile C++ to EXE
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-26.04
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+
+      - name: Compile C++
+        run: g++ main.cpp -o anjing.exe -std=c++17
+
+      - name: Upload EXE
+        uses: actions/upload-artifact@v5
+        with:
+          name: anjing-exe
+          path: anjing.exe
